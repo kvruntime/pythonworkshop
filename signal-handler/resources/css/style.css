@@ -1,0 +1,16 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40;
+  text-transform: capitalize;
+}
+
+QPushButton {
+  padding: 20px 10px;
+  background: linear-gradient(left, right, green, yellow);
+}
+QPushButton:hover {
+  background: hsl(27, 100%, 52%);
+}
+QLineEdit {
+  padding: 20px 10px;
+}
