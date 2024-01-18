@@ -1,13 +1,13 @@
-class DataService:
-    nbre: int = 0
+import random
 
+
+class DataService:
     def __init__(self) -> None:
-        self.__class__.nbre += 1
-        self.current_nbre = self.__class__.nbre
+        self.current_nbre = random.randint(1, 100)
         return
 
     def provide_data(self) -> int:
-        return 2 + self.__class__.nbre
+        return 2 + self.current_nbre
 
     def launch_operation(self) -> None:
         print(f"Operation....{self.current_nbre}")

@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import *
-
 from form import SomeForm
+from PyQt6.QtGui import QShowEvent
+from PyQt6.QtWidgets import *
 from viewmodels import FormViewModel, HomeViewModel, UserViewModel
 
 
@@ -42,10 +42,12 @@ class UserPage(QWidget):
         self.buttonCaller = QPushButton("Caller")
         self.buttonOpenDialog = QPushButton("Open Dialog")
 
+        layout.addStrut(10)
         layout.addWidget(QLabel("UserPage"))
         layout.addWidget(self.label)
         layout.addWidget(self.buttonCaller)
         layout.addWidget(self.buttonOpenDialog)
+        layout.addStrut(50)
 
         self.initializeBinding()
         return
@@ -60,6 +62,10 @@ class UserPage(QWidget):
     def command_open(self) -> None:
         from di_builder import di
 
-        self.dlg = SomeForm(di.resolve(FormViewModel), self)
-        self.dlg.exec()
+        dlg = SomeForm(di.resolve(FormViewModel), self)
+        dlg.exec()
         return None
+
+    def showEvent(self, a0: QShowEvent | None) -> None:
+        self.label.setText(f"Data: {self.vm.sdata}")
+        return super().showEvent(a0)
