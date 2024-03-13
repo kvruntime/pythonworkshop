@@ -8,3 +8,9 @@ class BaseEntity(BaseModel):
 
 class User(BaseEntity):
     name: str = ""
+
+
+class Todo(BaseEntity):
+    title: str
+    content: str
+    description: str | None = None
