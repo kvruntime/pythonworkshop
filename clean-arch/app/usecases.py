@@ -1,7 +1,8 @@
 # coding:utf-8
 import typing
-from core.irepository import IUserRepository
+
 from core.entities import User
+from core.repository import IUserRepository
 
 
 class UserUseCase:

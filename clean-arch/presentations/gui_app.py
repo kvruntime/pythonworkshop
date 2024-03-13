@@ -5,7 +5,7 @@ import typing
 from app.stores import UserInMemoryRepository
 from app.usecases import UserUseCase
 from core.entities import User
-from core.irepository import IUserRepository
+from core.repository import IUserRepository
 from PyQt6.QtWidgets import *
 from simple_injection import ServiceCollection
 
@@ -42,12 +42,11 @@ class UserForm(QWidget):
         pass
 
     def _update_ui(self) -> None:
-        for child in self.layoutUser.children():
-            child.deleteLater()
         for index in range(self.layoutUser.count()):
-            # child.deleteLater()
             self.layoutUser.removeItem(self.layoutUser.itemAt(index))
             self.layoutUser.itemAt(index)
+        for child in self.layoutUser.children():
+            child.deleteLater()
 
         for user in self.vm.users:
             self.layoutUser.addWidget(QLabel(user.name))

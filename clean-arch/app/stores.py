@@ -1,8 +1,9 @@
 # coding:utf-8
-from typing import List
-from core.irepository import IUserRepository
-from core.entities import User
 import typing
+from typing import List
+
+from core.entities import User
+from core.repository import IUserRepository
 
 
 class UserInMemoryRepository(IUserRepository):

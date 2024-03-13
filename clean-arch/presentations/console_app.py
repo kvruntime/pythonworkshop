@@ -1,7 +1,7 @@
 # coding:utf-8
 from app.stores import UserInMemoryRepository
 from app.usecases import UserUseCase
-from core.irepository import IUserRepository
+from core.repository import IUserRepository
 from simple_injection import ServiceCollection
 
 

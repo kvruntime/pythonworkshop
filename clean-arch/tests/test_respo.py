@@ -1,13 +1,13 @@
-from app.repository import UserRepository
+from app.stores import UserInMemoryRepository
+from core.entities import User
 
-ur = UserRepository()
+ur = UserInMemoryRepository()
 
 
 def test_ur() -> None:
-    user_id = "1"
-    username = "viktor"
+    user = User(id="1", name="viktor")
 
-    _username = ur.get(user_id)
+    expected_user = ur.get(user.id)
 
-    assert username.lower() == _username.name.lower()
-    return
+    assert user.name.lower() == expected_user.name.lower()
+    return None
