@@ -1,0 +1,17 @@
+
+
+QWidget {
+    background-color: hsl(0, 2%, 87%);
+    font-family: 'Courier New', Courier, monospace;
+}
+QPushButton {
+    background-color: hsl(27, 65%, 49%);
+}
+QPushButton:hover {
+    background-color: hsl(27, 100%, 34%);
+}
+QLineEdit{
+    background-color: hsla(0, 3%, 87%, 0.582);
+    color: hsl(14, 100%, 50%);
+    font-size: 12px;
+}
